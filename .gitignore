@@ -289,5 +289,5 @@ __pycache__/
 *.xsd.cs
 
 
-.idea
+.idea/*
 
