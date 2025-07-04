@@ -20,9 +20,11 @@ public class FilmeController : ControllerBase
     }
 
     [HttpGet]
-    public void ListaFilmes()
+    public List<Filme> ListaFilmes()
     {
         Console.WriteLine("Request de GET rodou");
         Console.WriteLine(filmes);
+
+        return filmes;
     }
 }
