@@ -20,7 +20,7 @@ public class FilmeController : ControllerBase
     }
 
     [HttpGet]
-    public List<Filme> ListaFilmes()
+    public IEnumerable<Filme> ListaFilmes()
     {
         Console.WriteLine("Request de GET rodou");
         Console.WriteLine(filmes);
