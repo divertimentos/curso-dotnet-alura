@@ -9,10 +9,12 @@ namespace FilmesApi.Controllers;
 public class FilmeController : ControllerBase
 {
     private static List<Filme> filmes = new List<Filme>();
+    private static int id = 0;
 
     [HttpPost]
     public void AdicionaFilme([FromBody] Filme filme)
     {
+        filme.Id = id++;
         filmes.Add(filme);
         Console.WriteLine($"Filme adicionado com sucesso!");
         Console.WriteLine(filme.Titulo);
@@ -22,9 +24,14 @@ public class FilmeController : ControllerBase
     [HttpGet]
     public IEnumerable<Filme> ListaFilmes()
     {
-        Console.WriteLine("Request de GET rodou");
         Console.WriteLine(filmes);
 
         return filmes;
+    }
+
+    [HttpGet("{id}")]
+    public Filme? RecuperaFilmePorIdId(int id)
+    {
+        return filmes.FirstOrDefault(filme => filme.Id == id);
     }
 }
