@@ -12,26 +12,24 @@ public class FilmeController : ControllerBase
     private static int id = 0;
 
     [HttpPost]
-    public void AdicionaFilme([FromBody] Filme filme)
+    public IActionResult AdicionaFilme([FromBody] Filme filme)
     {
         filme.Id = id++;
         filmes.Add(filme);
-        Console.WriteLine($"Filme adicionado com sucesso!");
-        Console.WriteLine(filme.Titulo);
-        Console.WriteLine(filme.Genero);
+        return CreatedAtAction(nameof(RecuperaFilmePorIdId), new { id = filme.Id }, filme);
     }
 
     [HttpGet]
-    public IEnumerable<Filme> ListaFilmes([FromQuery] int skip = 0,[FromQuery] int take = 5)
+    public IEnumerable<Filme> ListaFilmes([FromQuery] int skip = 0, [FromQuery] int take = 5)
     {
-        Console.WriteLine(filmes);
-
         return filmes.Skip(skip).Take(take);
     }
 
     [HttpGet("{id}")]
-    public Filme? RecuperaFilmePorIdId(int id)
+    public IActionResult RecuperaFilmePorIdId(int id)
     {
-        return filmes.FirstOrDefault(filme => filme.Id == id);
+        var filme = filmes.FirstOrDefault(filme => filme.Id == id);
+        if (filme == null) return NotFound();
+        return Ok(filme);
     }
 }
