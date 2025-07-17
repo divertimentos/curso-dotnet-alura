@@ -6,3 +6,9 @@
   - `use FilmeConnection` (ativar o banco)
     `show tables` (mostrar as tabelas)
     `describe FilmeConnection` (printar a tabela inteira)
+
+---
+
+# To Do List
+
+- [ ] Translate all code to English. Alura's course professor wrote all code in Portuguese for accessibility reasons, but that doesn't make any sense to me.
