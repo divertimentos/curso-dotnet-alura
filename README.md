@@ -6,6 +6,7 @@
   - `use FilmeConnection` (ativar o banco)
     `show tables` (mostrar as tabelas)
     `describe FilmeConnection` (printar a tabela inteira)
+- Outra coisa sobre a migration é que ela serve para aplicar o modelamento do banco. Eu achava que ela servia para aplicar dados em si. Na verdade, o que gerencia a entrada de dados no banco é o próprio CRUD que é construído. Por exemplo, rodamos uma migration quando alteramos uma tabela, quando adicionamos ou removemos alguma coluna, quando criamos uma tabela nova através de uma nova model.
 
 ---
 
