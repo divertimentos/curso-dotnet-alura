@@ -12,7 +12,9 @@
 ## Relacionando entidades
 
 - Uma tabela de Cinema prescinde uma tabela de endereços, ou seja, um Cinema _precisa_ de um endereço físico. Já o contrário não se aplica: uma rua pode existir sem que exista um cinema nela.
-- Ou seja, a relação Cinema > Endereço é de 
+- Porém, para o nosso exemplo, teremos 1 endereço para 1 cinema, então a relação é de 1:1 mesmo.
+
+Dentro de um **Cinema A**, precisamos de uma informação que conecte um endereço em outra tabela a esse **Cinema A**. Teremos, então uma coluna para isso.
 
 ---
 
