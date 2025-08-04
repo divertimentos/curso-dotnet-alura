@@ -8,4 +8,6 @@ public class ReadCinemaDto
 
     [Required(ErrorMessage = "O campo de nome é obrigatório!")]
     public string Nome { get; set; }
+
+    public ReadEnderecoDto ReadEnderecoDto { get; set; }
 }
